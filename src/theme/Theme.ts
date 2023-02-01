@@ -1,29 +1,29 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  fondo: {
+  background: {
     flex: 1,
     backgroundColor: 'black',
     justifyContent: 'flex-start',
     paddingHorizontal: 20,
   },
-  calculadoraContainer: {
+  calculatorContainer: {
     paddingHorizontal: 20,
     flex: 1,
     justifyContent: 'flex-end',
   },
-  resultado: {
+  result: {
     color: 'white',
     fontSize: 60,
     textAlign: 'right',
     paddingBottom: 10,
   },
-  resultadoChico: {
+  smallResult: {
     color: 'rgba(255,255,255,0.5)',
     fontSize: 30,
     textAlign: 'right',
   },
-  fila: {
+  row: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginBottom: 18,

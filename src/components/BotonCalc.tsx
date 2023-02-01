@@ -2,34 +2,34 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface BotonCalProps {
-  texto: string;
-  color?: string;
-  ancho?: boolean;
-  action: (numeroTexto: string) => void;
+  text: string;
+  colour?: string;
+  wide?: boolean;
+  action: (textNumber: string) => void;
 }
 
 export const BotonCalc: React.FC<BotonCalProps> = ({
-  texto,
-  color = '#2D2D2D',
-  ancho = false,
+  text,
+  colour = '#2D2D2D',
+  wide = false,
   action,
 }) => {
   return (
-    <TouchableOpacity onPress={() => action(texto)}>
+    <TouchableOpacity onPress={() => action(text)}>
       <View
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
-          ...styles.boton,
-          backgroundColor: color,
-          width: ancho ? 180 : 80,
+          ...styles.button,
+          backgroundColor: colour,
+          width: wide ? 180 : 80,
         }}>
         <Text
           // eslint-disable-next-line react-native/no-inline-styles
           style={{
-            ...styles.botonTexto,
-            color: color === '#9B9B9B' ? 'black' : 'white',
+            ...styles.buttonText,
+            color: colour === '#9B9B9B' ? 'black' : 'white',
           }}>
-          {texto}
+          {text}
         </Text>
       </View>
     </TouchableOpacity>
@@ -37,7 +37,7 @@ export const BotonCalc: React.FC<BotonCalProps> = ({
 };
 
 const styles = StyleSheet.create({
-  boton: {
+  button: {
     alignItems: 'center',
     borderRadius: 100,
     height: 80,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     width: 80,
     marginHorizontal: 8,
   },
-  botonTexto: {
+  buttonText: {
     fontSize: 30,
     fontWeight: '500',
     padding: 10,
