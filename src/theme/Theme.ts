@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
     justifyContent: 'flex-start',
-    paddingHorizontal: 20,
   },
   calculatorContainer: {
     paddingHorizontal: 20,

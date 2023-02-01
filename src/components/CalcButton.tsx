@@ -1,27 +1,28 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-interface BotonCalProps {
-  text: string;
+interface CalcButtonProps {
+  value: string;
   colour?: string;
   wide?: boolean;
-  action: (textNumber: string) => void;
+  action: (value: string) => void;
 }
 
-export const BotonCalc: React.FC<BotonCalProps> = ({
-  text,
+export const CalcButton: React.FC<CalcButtonProps> = ({
+  value,
   colour = '#2D2D2D',
   wide = false,
   action,
 }) => {
   return (
-    <TouchableOpacity onPress={() => action(text)}>
+    <TouchableOpacity onPress={() => action(value)}>
       <View
         // eslint-disable-next-line react-native/no-inline-styles
         style={{
           ...styles.button,
           backgroundColor: colour,
-          width: wide ? 180 : 80,
+          width: wide ? 152 : 68,
+          paddingBottom: value === 'x' ? 5 : 0,
         }}>
         <Text
           // eslint-disable-next-line react-native/no-inline-styles
@@ -29,7 +30,7 @@ export const BotonCalc: React.FC<BotonCalProps> = ({
             ...styles.buttonText,
             color: colour === '#9B9B9B' ? 'black' : 'white',
           }}>
-          {text}
+          {value}
         </Text>
       </View>
     </TouchableOpacity>
@@ -40,9 +41,9 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     borderRadius: 100,
-    height: 80,
+    height: 68,
     justifyContent: 'center',
-    width: 80,
+    width: 68,
     marginHorizontal: 8,
   },
   buttonText: {
